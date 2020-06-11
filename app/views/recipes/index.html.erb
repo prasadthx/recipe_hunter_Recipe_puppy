@@ -14,15 +14,11 @@
       Ingredients
     </th>
   </tr>
-  <% if @recipes.nil? %>
-    <h3>I am sorry. I didn't find any recipe! Kya bana rhe ho esa guru???</h3>
-  <% else %>
-    <% @recipes.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
       <tr>
-        <td> <%= link_to image_tag(recipe["thumbnail"]), recipe["href"] %>  </td>
+        <td> <%= link_to (image_tag(recipe["thumbnail"])), recipe["href"] %>  </td>
         <td> <%= link_to sanitize(recipe["title"]), recipe["href"] %> </td>
         <td> <%= recipe["ingredients"] %> </td>
       </tr>
-    <% end %>
   <% end %>
 </table>
